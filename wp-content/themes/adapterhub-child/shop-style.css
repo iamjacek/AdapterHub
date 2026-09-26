@@ -1,0 +1,27 @@
+/* =========================================================
+   ADAPTERHUB — SHOP
+   ========================================================= */
+
+.woocommerce-breadcrumb {
+  display: none;
+}
+
+/* =========================================================
+   SHOP — PAGE HEADER
+   ========================================================= */
+
+.woocommerce-products-header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 40px 20px;
+}
+
+.woocommerce-products-header .page-title,
+.woocommerce-products-header__title {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #111111;
+}

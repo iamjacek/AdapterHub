@@ -1,0 +1,83 @@
+# =========================================================
+# AdapterHub — WordPress Git Ignore
+# =========================================================
+
+# WordPress configuration / secrets
+wp-config.php
+
+# Local / development files
+.private/
+local-xdebug.ini
+local-xdebuginfo.php
+
+# WordPress generated files
+wp-content/cache/
+wp-content/upgrade/
+wp-content/uploads/
+
+# Logs
+*.log
+debug.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE / editor
+.vscode/
+.idea/
+
+# Temporary / backup files
+*.bak
+*.tmp
+*.swp
+*.old
+
+# Database dumps
+*.sql
+*.sql.gz
+database/
+backups/
+
+# WordPress core
+wp-admin/
+wp-includes/
+wp-activate.php
+wp-blog-header.php
+wp-comments-post.php
+wp-cron.php
+wp-links-opml.php
+wp-load.php
+wp-login.php
+wp-mail.php
+wp-settings.php
+wp-signup.php
+wp-trackback.php
+xmlrpc.php
+default.php
+license.txt
+readme.html
+index.php
+
+# Local server files
+.htaccess
+.htaccess.bk
+local-xdebuginfo.php
+
+
+
+# =========================================================
+# WordPress dependencies — not part of AdapterHub source
+# =========================================================
+
+wp-content/plugins/*
+!wp-content/plugins/adapterhub-core/
+
+wp-content/themes/*
+!wp-content/themes/adapterhub-child/
+
+# WordPress generated / local data
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/litespeed/
+wp-content/mu-plugins/

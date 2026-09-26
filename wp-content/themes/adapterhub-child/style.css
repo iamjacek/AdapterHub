@@ -1,0 +1,484 @@
+/*
+Theme Name: AdapterHub Child
+Theme URI: https://adapterhub.local
+Description: Custom child theme for AdapterHub.
+Author: AdapterHub
+Template: hello-elementor
+Version: 1.0.0
+Text Domain: adapterhub-child
+*/
+
+@media (max-width: 767px) {
+  .hero-mobile-white,
+  .hero-mobile-white p,
+  .hero-mobile-white h1 {
+    color: #ffffff !important;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .hero-mobile-white p,
+  .upgrade-subtitle p {
+    max-width: 480px;
+  }
+}
+/* =========================================================
+   ADAPTERHUB — CAR BRANDS
+   ========================================================= */
+
+/* Main grid */
+.adapterhub-car-brands {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+/* =========================================================
+   BRAND CARD
+   ========================================================= */
+
+.adapterhub-car-brand-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 150px;
+  padding: 20px;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+/* Hover */
+.adapterhub-car-brand-item:hover {
+  border-color: #1e5eff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.adapterhub-car-brand-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 70px;
+  margin-bottom: 12px;
+}
+
+.adapterhub-car-brand-logo img {
+  display: block;
+
+  max-width: 100%;
+  max-height: 60px;
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+}
+
+/* =========================================================
+   BRAND NAME
+   ========================================================= */
+
+.adapterhub-car-brand-name {
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.3;
+
+  color: #111111;
+  text-align: center;
+}
+
+/* =========================================================
+   MORE BRANDS
+   ========================================================= */
+
+.adapterhub-more-brands {
+  background: #f8f9fa;
+}
+
+.adapterhub-more-brands .adapterhub-car-brand-name {
+  transform: translateY(13px);
+}
+
+.adapterhub-more-brands:hover {
+  background: #f3f4f6;
+}
+
+.adapterhub-more-brands-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+  margin-bottom: 14px;
+
+  border: 1px solid #111111;
+  border-radius: 50%;
+
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1;
+
+  color: #111111;
+}
+
+/* =========================================================
+   DESKTOP — 1501px+
+   8 BRANDS + MORE BRANDS
+   ========================================================= */
+
+.adapterhub-car-brands {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* Show only first 8 brands */
+.adapterhub-car-brand:nth-child(n + 9):not(.adapterhub-more-brands) {
+  display: none;
+}
+
+/* =========================================================
+   1025px–1500px
+   5 BRANDS + MORE BRANDS
+   ========================================================= */
+
+@media screen and (max-width: 1500px) {
+  .adapterhub-car-brands {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .adapterhub-car-brand:nth-child(n + 6):not(.adapterhub-more-brands) {
+    display: none;
+  }
+}
+
+/* =========================================================
+   TABLET — 768px–1024px
+   5 BRANDS + MORE BRANDS
+   ========================================================= */
+
+@media screen and (max-width: 1024px) {
+  .adapterhub-car-brands {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+/* =========================================================
+   MOBILE — 0–767px
+   3 BRANDS + MORE BRANDS
+   ========================================================= */
+
+@media screen and (max-width: 767px) {
+  .adapterhub-car-brands {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .adapterhub-car-brand:nth-child(n + 4):not(.adapterhub-more-brands) {
+    display: none;
+  }
+
+  .adapterhub-car-brand-item {
+    min-height: 130px;
+    padding: 15px;
+  }
+
+  .adapterhub-car-brand-logo {
+    height: 60px;
+    margin-bottom: 8px;
+  }
+
+  .adapterhub-car-brand-logo img {
+    max-height: 50px;
+  }
+
+  .adapterhub-car-brand-name {
+    font-size: 13px;
+  }
+
+  .adapterhub-more-brands-icon {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 10px;
+    font-size: 21px;
+  }
+}
+
+/* =========================================================
+   ADAPTERHUB — FEATURED PRODUCTS
+   ========================================================= */
+
+.adapterhub-featured-products {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+/* =========================================================
+   PRODUCT CARD
+   ========================================================= */
+
+.adapterhub-product-card {
+  display: flex;
+  flex-direction: column;
+
+  background: #ffffff;
+  border: 1px solid transparent;
+  border-radius: 6px;
+
+  overflow: hidden;
+  text-decoration: none;
+
+  transition: all 0.2s ease;
+}
+
+.adapterhub-product-card:hover {
+  border-color: #1e5eff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   PRODUCT IMAGE
+   ========================================================= */
+
+.adapterhub-product-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 190px;
+  padding: 12px;
+
+  background: #f8f9fa;
+}
+
+.adapterhub-product-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  object-fit: contain;
+}
+
+/* =========================================================
+   PRODUCT NAME
+   ========================================================= */
+
+.adapterhub-product-name {
+  display: block;
+  margin: 0;
+  padding: 12px 8px 0;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #111111 !important;
+  text-decoration: none;
+}
+
+/* =========================================================
+   PRODUCT PRICE
+   ========================================================= */
+
+.adapterhub-product-price {
+  display: block;
+  margin: 0;
+  padding: 6px 8px 16px;
+  font-family: Inter, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #111111 !important;
+}
+
+.adapterhub-product-price .woocommerce-Price-amount,
+.adapterhub-product-price .woocommerce-Price-currencySymbol {
+  color: #111111 !important;
+}
+/* =========================================================
+   FEATURED PRODUCTS — RESPONSIVE
+   ========================================================= */
+
+@media (min-width: 1501px) {
+  .adapterhub-featured-products {
+    grid-template-columns: repeat(5, 1fr) !important;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1500px) {
+  .adapterhub-featured-products {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .adapterhub-featured-products {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .adapterhub-featured-products {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* =========================================================
+   FEATURED PRODUCTS — NUMBER OF PRODUCTS
+   ========================================================= */
+
+@media (min-width: 1501px) {
+  .adapterhub-product-card:nth-child(n + 6) {
+    display: none;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1500px) {
+  .adapterhub-product-card:nth-child(n + 5) {
+    display: none;
+  }
+}
+
+/* TABLET — 768px–1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .adapterhub-product-card:nth-child(n + 4) {
+    display: none;
+  }
+}
+
+/* MOBILE — 0–767px */
+@media (max-width: 767px) {
+  .adapterhub-product-card:nth-child(n + 5) {
+    display: none;
+  }
+}
+
+/* =========================================================
+   FEATURED PRODUCTS — IMAGE RESPONSIVE
+   ========================================================= */
+
+/* BIG DESKTOP — 1501px+ */
+@media (min-width: 1501px) {
+  .adapterhub-product-image {
+    height: 200px;
+  }
+}
+
+/* DESKTOP — 1025px–1500px */
+@media (min-width: 1025px) and (max-width: 1500px) {
+  .adapterhub-product-image {
+    height: 190px;
+  }
+}
+
+/* TABLET — 768px–1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .adapterhub-product-image {
+    height: 180px;
+  }
+}
+
+/* MOBILE — 0–767px */
+@media (max-width: 767px) {
+  .adapterhub-product-image {
+    height: 150px;
+    padding: 10px;
+  }
+}
+
+/* =========================================================
+   FEATURED PRODUCTS — EQUAL CARD HEIGHT
+   ========================================================= */
+
+.adapterhub-product-name {
+  min-height: 52px;
+}
+
+/* =========================================================
+   ADAPTERHUB — NEWSLETTER
+   ========================================================= */
+
+.adapterhub-newsletter-form {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+.adapterhub-newsletter-form input {
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #111111;
+  font-family: Inter, sans-serif;
+  font-size: 15px;
+  outline: none;
+}
+
+@media (min-width: 768px) {
+  .adapterhub-newsletter-form input {
+    min-width: 350px;
+  }
+}
+
+.adapterhub-newsletter-form input::placeholder {
+  color: #6b7280;
+}
+
+.adapterhub-newsletter-form button {
+  height: 48px;
+  padding: 0 24px;
+  border: 0;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #1e5eff;
+  font-family: Inter, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  border: 1px solid #1e5eff;
+}
+
+.adapterhub-newsletter-form button:hover {
+  background: #1e5eff;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+@media (max-width: 767px) {
+  .adapterhub-newsletter-form {
+    flex-direction: column;
+  }
+
+  .adapterhub-newsletter-form input,
+  .adapterhub-newsletter-form button {
+    width: 100%;
+  }
+}
+
+.adapterhub-subscription-wrapper {
+  overflow: hidden;
+}
