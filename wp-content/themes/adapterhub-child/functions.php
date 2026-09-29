@@ -27,3 +27,11 @@ function adapterhub_shop_styles() {
     }
 }
 add_action( 'wp_enqueue_scripts', 'adapterhub_shop_styles' );
+
+// add subtitle to shop page
+function adapterhub_shop_subtitle() {
+    if ( is_shop() ) {
+        echo '<p class="adapterhub-shop-subtitle">High-quality speaker adapters for popular car brands. Easy installation, perfect fit and better sound in your car.</p>';
+    }
+}
+add_action( 'woocommerce_before_shop_loop', 'adapterhub_shop_subtitle', 5 );

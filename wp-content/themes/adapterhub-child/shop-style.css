@@ -2,26 +2,393 @@
    ADAPTERHUB — SHOP
    ========================================================= */
 
-.woocommerce-breadcrumb {
-  display: none;
+body.woocommerce-shop .site-main {
+  max-width: 1600px !important;
+}
+
+.woocommerce-shop .site-main {
+  margin-top: 30px;
 }
 
 /* =========================================================
-   SHOP — PAGE HEADER
+   SHOP — BREADCRUMB
    ========================================================= */
 
-.woocommerce-products-header {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 50px 40px 20px;
+.woocommerce-breadcrumb {
+  padding-top: 0 !important;
+  padding-bottom: 20px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  margin: 0 !important;
+  font-family: Inter, sans-serif;
+  font-size: 13px !important;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #6b7280 !important;
 }
 
-.woocommerce-products-header .page-title,
-.woocommerce-products-header__title {
-  margin: 0;
-  font-family: Inter, sans-serif;
-  font-size: 42px;
-  font-weight: 700;
-  line-height: 1.1;
+@media (min-width: 768px) {
+  .woocommerce-breadcrumb {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .woocommerce-breadcrumb {
+    padding-left: 80px !important;
+    padding-right: 80px !important;
+  }
+}
+
+.woocommerce-breadcrumb a {
+  color: #6b7280;
+  text-decoration: none;
+}
+
+.woocommerce-breadcrumb a:hover {
   color: #111111;
+  text-decoration: none;
+}
+
+/* =========================================================
+   SHOP — SUBTITLE
+   ========================================================= */
+
+.adapterhub-shop-subtitle {
+  max-width: 635px;
+  margin: 0 0 28px;
+  padding-left: 80px;
+  padding-right: 80px;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #6b7280;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .adapterhub-shop-subtitle {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .adapterhub-shop-subtitle {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* =========================================================
+   SHOP — TITLE
+   ========================================================= */
+
+.woocommerce-products-header .page-title {
+  display: block;
+  margin: 0 0 8px;
+  padding: 0 80px;
+  font-family: Inter, sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  color: #111111;
+}
+
+/* =========================================================
+   SHOP — RESULTS TOOLBAR
+   ========================================================= */
+
+.woocommerce-result-count {
+  margin: 0;
+  padding-left: 80px;
+  padding-right: 80px;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #4b5563;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .woocommerce-result-count {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .woocommerce-result-count {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.woocommerce-ordering {
+  margin: 0;
+  padding-right: 80px;
+}
+
+.woocommerce-ordering select {
+  height: 42px;
+  padding: 0 44px 0 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23111111' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 14px 14px;
+  color: #111111;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* =========================================================
+   SHOP — PRODUCT GRID
+   ========================================================= */
+
+.woocommerce ul.products {
+  display: grid;
+  gap: 48px 24px;
+  margin: 0;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.woocommerce ul.products::before,
+.woocommerce ul.products::after {
+  display: none;
+}
+
+.woocommerce ul.products li.product {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Desktop */
+@media (min-width: 1501px) {
+  .woocommerce ul.products {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Laptop */
+@media (min-width: 1025px) and (max-width: 1500px) {
+  .woocommerce ul.products {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .woocommerce ul.products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .woocommerce ul.products {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 40px;
+  }
+
+  .woocommerce ul.products li.product {
+    width: 100% !important;
+    float: none !important;
+    clear: none !important;
+    margin: 0 !important;
+  }
+}
+
+/* =========================================================
+   SHOP — PRODUCT IMAGE
+   ========================================================= */
+
+.woocommerce ul.products li.product a img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  margin: 0 0 14px;
+}
+
+/* =========================================================
+   SHOP — PRODUCT NAME
+   ========================================================= */
+
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+  margin: 0;
+  padding: 0;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #111111;
+}
+
+/* =========================================================
+   SHOP — PRODUCT PRICE
+   ========================================================= */
+
+.woocommerce ul.products li.product .price {
+  margin: 5px 0 0;
+  padding: 0;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #111111;
+}
+
+.woocommerce ul.products li.product .price .amount,
+.woocommerce ul.products li.product .price .woocommerce-Price-currencySymbol {
+  color: #111111;
+}
+
+/* =========================================================
+   SHOP — ADD TO CART
+   ========================================================= */
+
+.woocommerce ul.products li.product .button {
+  display: inline-flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 42px;
+  margin: 14px 0 0;
+  padding: 0 18px;
+  border: 1px solid #1e5eff;
+  border-radius: 4px;
+  background: #1e5eff;
+  color: #ffffff;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.woocommerce ul.products li.product .button:hover {
+  border-color: #1648c7;
+  background: #1648c7;
+  color: #ffffff;
+}
+
+/* =========================================================
+   SHOP — DESKTOP
+   ========================================================= */
+
+@media (min-width: 1501px) {
+  .woocommerce-products-header .page-title {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  .woocommerce ul.products {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* =========================================================
+   SHOP — LAPTOP
+   ========================================================= */
+
+@media (min-width: 1025px) and (max-width: 1500px) {
+  .woocommerce-products-header .page-title {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  .woocommerce-result-count {
+    padding-left: 80px;
+  }
+
+  .woocommerce-ordering {
+    padding-right: 80px;
+  }
+
+  .woocommerce ul.products {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
+/* =========================================================
+   SHOP — TABLET
+   ========================================================= */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .woocommerce-products-header .page-title {
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 32px;
+  }
+
+  .woocommerce-result-count {
+    padding-left: 40px;
+  }
+
+  .woocommerce-ordering {
+    padding-right: 40px;
+  }
+
+  .woocommerce ul.products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+/* =========================================================
+   SHOP — MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+  .woocommerce-products-header .page-title {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 28px;
+    line-height: 1.25;
+  }
+
+  .woocommerce-result-count {
+    padding-left: 20px;
+  }
+
+  .woocommerce-ordering {
+    padding-right: 20px;
+  }
+
+  .woocommerce ul.products {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 40px;
+  }
+
+  .woocommerce ul.products li.product .woocommerce-loop-product__title {
+    font-size: 14px;
+  }
+
+  .woocommerce ul.products li.product .price {
+    font-size: 14px;
+  }
 }
