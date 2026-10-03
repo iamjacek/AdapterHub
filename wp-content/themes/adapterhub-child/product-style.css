@@ -1,0 +1,992 @@
+/* =========================================================
+   ADAPTERHUB — PRODUCT PAGE
+   ========================================================= */
+/* =========================================================
+   PRODUCT PAGE — BREADCRUMB
+   ========================================================= */
+
+.single-product nav.woocommerce-breadcrumb {
+  display: block !important;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 30px 0 20px;
+  padding: 0;
+
+  font-family: Inter, sans-serif;
+  font-size: 13px !important;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #6b7280 !important;
+}
+
+.single-product nav.woocommerce-breadcrumb a {
+  color: #6b7280 !important;
+  text-decoration: none;
+}
+
+.single-product nav.woocommerce-breadcrumb a:hover {
+  color: #111111 !important;
+  text-decoration: none;
+}
+
+.single-product div.product {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 80px;
+}
+
+.single-product div.product .woocommerce-product-gallery,
+.single-product div.product .summary {
+  float: none;
+  width: auto;
+  margin: 0;
+}
+
+/* =========================================================
+   PDP — FULL WIDTH LOWER SECTIONS
+   ========================================================= */
+
+.single-product div.product > .woocommerce-tabs,
+.single-product div.product > .related.products {
+  grid-column: 1 / -1;
+}
+
+.single-product div.product .woocommerce-product-gallery,
+.single-product div.product .woocommerce-product-gallery__wrapper,
+.single-product div.product .woocommerce-product-gallery__image {
+  width: 100% !important;
+}
+
+.single-product
+  div.product
+  .woocommerce-product-gallery__image
+  img:not(.zoomImg) {
+  width: 100% !important;
+  height: auto;
+  display: block;
+}
+
+/* =========================================================
+   ADAPTERHUB — PDP PRODUCT INFO
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   PRODUCT TITLE
+   --------------------------------------------------------- */
+
+.single-product div.product .summary .product_title {
+  margin: 0 0 12px;
+  padding: 0;
+  font-family: Inter, sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.4px;
+  color: #111111;
+}
+
+/* ---------------------------------------------------------
+   PRICE
+   --------------------------------------------------------- */
+
+.single-product div.product .summary .price {
+  margin: 0 0 28px;
+  padding: 0;
+  font-family: Inter, sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #111111;
+}
+
+.single-product div.product .summary .price .amount,
+.single-product div.product .summary .price .woocommerce-Price-currencySymbol {
+  color: #111111;
+}
+
+/* ---------------------------------------------------------
+   ADD TO CART FORM
+   --------------------------------------------------------- */
+
+.single-product div.product .summary form.cart {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  margin: 0 0 28px;
+  padding: 0;
+}
+
+/* ---------------------------------------------------------
+   QUANTITY
+   --------------------------------------------------------- */
+
+.single-product div.product .summary form.cart .quantity {
+  margin: 0;
+}
+
+.single-product div.product .summary form.cart .quantity .qty {
+  box-sizing: border-box;
+  width: 72px;
+  height: 46px;
+  padding: 0 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #111111;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  outline: none;
+}
+
+.single-product div.product .summary form.cart .quantity .qty:focus {
+  border-color: #1e5eff;
+}
+
+/* ---------------------------------------------------------
+   ADD TO BASKET BUTTON
+   --------------------------------------------------------- */
+
+.single-product div.product .summary .single_add_to_cart_button {
+  box-sizing: border-box;
+  min-height: 46px;
+  margin: 0;
+  padding: 0 24px;
+  border: 1px solid #1e5eff;
+  border-radius: 4px;
+  background: #1e5eff;
+  color: #ffffff;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.single-product div.product .summary .single_add_to_cart_button:hover {
+  border-color: #1648c7;
+  background: #1648c7;
+  color: #ffffff;
+}
+
+/* ---------------------------------------------------------
+   PRODUCT META
+   --------------------------------------------------------- */
+
+.single-product div.product .summary .product_meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 20px 0 0;
+  border-top: 1px solid #e5e7eb;
+  font-family: Inter, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #6b7280;
+}
+
+.single-product div.product .summary .product_meta > span {
+  display: block;
+  margin: 0;
+}
+
+.single-product div.product .summary .product_meta .sku_wrapper,
+.single-product div.product .summary .product_meta .posted_in,
+.single-product div.product .summary .product_meta .brand {
+  color: #6b7280;
+}
+
+.single-product div.product .summary .product_meta strong {
+  font-weight: 500;
+  color: #111111;
+}
+
+/* ---------------------------------------------------------
+   META LINKS
+   --------------------------------------------------------- */
+
+.single-product div.product .summary .product_meta a {
+  color: #4b5563;
+  text-decoration: none;
+}
+
+.single-product div.product .summary .product_meta a:hover {
+  color: #1e5eff;
+}
+
+/* ---------------------------------------------------------
+   TABLET
+   --------------------------------------------------------- */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .single-product div.product .summary .product_title {
+    font-size: 28px;
+  }
+
+  .single-product div.product .summary .price {
+    font-size: 20px;
+  }
+}
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 767px) {
+  .single-product div.product .summary .product_title {
+    font-size: 26px;
+    line-height: 1.25;
+    letter-spacing: -0.2px;
+  }
+
+  .single-product div.product .summary .price {
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+
+  .single-product div.product .summary form.cart {
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  .single-product div.product .summary form.cart .quantity .qty {
+    width: 64px;
+    height: 44px;
+  }
+
+  .single-product div.product .summary .single_add_to_cart_button {
+    min-height: 44px;
+    padding: 0 18px;
+  }
+}
+
+.woocommerce #content div.product div.images,
+.woocommerce div.product div.images,
+.woocommerce-page #content div.product div.images,
+.woocommerce-page div.product div.images {
+  width: 100%;
+}
+
+.woocommerce #content div.product div.summary,
+.woocommerce div.product div.summary,
+.woocommerce-page #content div.product div.summary,
+.woocommerce-page div.product div.summary {
+  width: 100%;
+}
+
+/* =========================================================
+   ADAPTERHUB — PDP DESCRIPTIONS & REVIEWS
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   SHORT DESCRIPTION
+   --------------------------------------------------------- */
+
+.single-product
+  div.product
+  .summary
+  .woocommerce-product-details__short-description {
+  margin: 0 0 28px;
+  padding: 0;
+  font-family: Inter, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+.single-product
+  div.product
+  .summary
+  .woocommerce-product-details__short-description
+  p {
+  margin: 0;
+}
+
+/* ---------------------------------------------------------
+   DESCRIPTION / REVIEWS — MAIN CARD
+   --------------------------------------------------------- */
+
+.single-product div.product > .woocommerce-tabs {
+  margin: 64px 0 0;
+  padding: 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+/* ---------------------------------------------------------
+   TABS NAVIGATION
+   --------------------------------------------------------- */
+
+.single-product div.product > .woocommerce-tabs ul.tabs {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: #f8f9fa;
+}
+
+.single-product div.product > .woocommerce-tabs ul.tabs::before,
+.single-product div.product > .woocommerce-tabs ul.tabs::after {
+  display: none;
+}
+
+.single-product div.product > .woocommerce-tabs ul.tabs li {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.single-product div.product > .woocommerce-tabs ul.tabs li::before,
+.single-product div.product > .woocommerce-tabs ul.tabs li::after {
+  display: none;
+}
+
+.single-product div.product > .woocommerce-tabs ul.tabs li a {
+  display: flex;
+  align-items: center;
+  min-height: 52px;
+  box-sizing: border-box;
+  padding: 0 24px;
+  border-bottom: 2px solid transparent;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  color: #6b7280;
+  text-decoration: none;
+}
+
+.single-product div.product > .woocommerce-tabs ul.tabs li a:hover {
+  color: #111111;
+}
+
+.single-product div.product > .woocommerce-tabs ul.tabs li.active a {
+  border-bottom-color: #1e5eff;
+  color: #111111;
+}
+
+/* ---------------------------------------------------------
+   TAB CONTENT
+   --------------------------------------------------------- */
+
+.single-product div.product > .woocommerce-tabs .woocommerce-Tabs-panel {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 32px;
+  font-family: Inter, sans-serif;
+  color: #4b5563;
+}
+
+.single-product div.product > .woocommerce-tabs .woocommerce-Tabs-panel > h2 {
+  margin: 0 0 14px;
+  padding: 0;
+  font-family: Inter, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #111111;
+}
+
+.single-product div.product > .woocommerce-tabs .woocommerce-Tabs-panel p {
+  margin: 0 0 16px;
+  font-family: Inter, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #4b5563;
+}
+
+.single-product
+  div.product
+  > .woocommerce-tabs
+  .woocommerce-Tabs-panel
+  p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------------------------------------------------------
+   REVIEWS
+   --------------------------------------------------------- */
+
+.single-product div.product > .woocommerce-tabs .woocommerce-Reviews-title {
+  margin: 0 0 20px;
+  font-family: Inter, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #111111;
+}
+
+.single-product div.product > .woocommerce-tabs .woocommerce-noreviews {
+  margin-bottom: 28px;
+  color: #6b7280;
+}
+
+/* Review form */
+
+.single-product div.product > .woocommerce-tabs #review_form_wrapper {
+  margin-top: 28px;
+  padding-top: 28px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.single-product div.product > .woocommerce-tabs .comment-reply-title {
+  display: block;
+  margin: 0 0 20px;
+  font-family: Inter, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #111111;
+}
+
+.single-product div.product > .woocommerce-tabs .comment-form label {
+  display: block;
+  margin: 0 0 7px;
+  font-family: Inter, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #111111;
+}
+
+.single-product div.product > .woocommerce-tabs .comment-form textarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 140px;
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  background: #ffffff;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #111111;
+  resize: vertical;
+}
+
+.single-product div.product > .woocommerce-tabs .comment-form textarea:focus {
+  border-color: #1e5eff;
+  outline: none;
+}
+
+.single-product div.product > .woocommerce-tabs .form-submit {
+  margin: 20px 0 0;
+}
+
+.single-product div.product > .woocommerce-tabs .form-submit .submit {
+  min-height: 42px;
+  padding: 0 20px;
+  border: 1px solid #1e5eff;
+  border-radius: 4px;
+  background: #1e5eff;
+  color: #ffffff;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.single-product div.product > .woocommerce-tabs .form-submit .submit:hover {
+  border-color: #1648c7;
+  background: #1648c7;
+}
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 767px) {
+  .single-product
+    div.product
+    .summary
+    .woocommerce-product-details__short-description {
+    margin-bottom: 24px;
+    font-size: 15px;
+  }
+
+  .single-product div.product > .woocommerce-tabs {
+    margin-top: 48px;
+    border-radius: 4px;
+  }
+
+  .single-product div.product > .woocommerce-tabs ul.tabs li a {
+    min-height: 48px;
+    padding: 0 16px;
+    font-size: 13px;
+  }
+
+  .single-product div.product > .woocommerce-tabs .woocommerce-Tabs-panel {
+    padding: 24px 20px;
+  }
+}
+
+.woocommerce div.product form.cart::after,
+.woocommerce div.product form.cart::before {
+  content: none;
+}
+
+/* =========================================================
+   ADAPTERHUB — PDP RELATED PRODUCTS
+   ========================================================= */
+
+.single-product div.product > .related.products {
+  grid-column: 1 / -1;
+  margin: 56px 0 0;
+  padding: 0;
+}
+
+.single-product div.product > .related.products > h2 {
+  margin: 0 0 28px;
+  padding: 0;
+  font-family: Inter, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.2px;
+  color: #111111;
+}
+
+/* ---------------------------------------------------------
+   PRODUCT GRID
+   --------------------------------------------------------- */
+
+.single-product div.product > .related.products ul.products {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 48px 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.single-product div.product > .related.products ul.products::before,
+.single-product div.product > .related.products ul.products::after {
+  display: none;
+}
+
+.single-product div.product > .related.products ul.products li.product {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------------------------------------------------------
+   PRODUCT IMAGE
+   --------------------------------------------------------- */
+
+.single-product div.product > .related.products ul.products li.product a img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  margin: 0 0 14px;
+}
+
+/* ---------------------------------------------------------
+   PRODUCT TITLE
+   --------------------------------------------------------- */
+
+.single-product
+  div.product
+  > .related.products
+  ul.products
+  li.product
+  .woocommerce-loop-product__title {
+  margin: 0;
+  padding: 0;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #111111;
+}
+
+/* ---------------------------------------------------------
+   PRICE
+   --------------------------------------------------------- */
+
+.single-product div.product > .related.products ul.products li.product .price {
+  margin: 5px 0 10px;
+  padding: 0;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #111111;
+}
+
+.single-product
+  div.product
+  > .related.products
+  ul.products
+  li.product
+  .price
+  .amount,
+.single-product
+  div.product
+  > .related.products
+  ul.products
+  li.product
+  .price
+  .woocommerce-Price-currencySymbol {
+  color: #111111;
+}
+
+/* ---------------------------------------------------------
+   ADD TO BASKET
+   --------------------------------------------------------- */
+
+.single-product div.product > .related.products ul.products li.product .button {
+  display: inline-flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 42px;
+  margin: 14px 0 0;
+  padding: 0 18px;
+  border: 1px solid #1e5eff;
+  border-radius: 4px;
+  background: #1e5eff;
+  color: #ffffff;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.single-product
+  div.product
+  > .related.products
+  ul.products
+  li.product
+  .button:hover {
+  border-color: #1648c7;
+  background: #1648c7;
+  color: #ffffff;
+}
+
+/* Hide WooCommerce View Cart link */
+
+.single-product
+  div.product
+  > .related.products
+  ul.products
+  li.product
+  .added_to_cart {
+  display: none !important;
+}
+
+/* ---------------------------------------------------------
+   TABLET
+   --------------------------------------------------------- */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .single-product div.product > .related.products {
+    margin-top: 56px;
+  }
+
+  .single-product div.product > .related.products ul.products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 24px;
+  }
+}
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 767px) {
+  .single-product div.product > .related.products {
+    margin-top: 48px;
+  }
+
+  .single-product div.product > .related.products > h2 {
+    margin-bottom: 24px;
+    font-size: 22px;
+  }
+
+  .single-product div.product > .related.products ul.products {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .single-product div.product > .related.products ul.products li.product {
+    width: 100% !important;
+    float: none !important;
+    clear: none !important;
+  }
+}
+
+/* =========================================================
+   ADAPTERHUB — PDP RESPONSIVE
+   EXCLUDES RELATED PRODUCTS
+   ========================================================= */
+
+/* =========================================================
+   TABLET — 768px–1024px
+   ========================================================= */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Main product layout */
+
+  .single-product div.product {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 40px;
+  }
+
+  /* Product image */
+
+  .single-product div.product .woocommerce-product-gallery {
+    width: 100% !important;
+  }
+
+  /* Product title */
+
+  .single-product div.product .summary .product_title {
+    font-size: 28px;
+    line-height: 1.25;
+    letter-spacing: -0.3px;
+  }
+
+  /* Price */
+
+  .single-product div.product .summary .price {
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+
+  /* Short description */
+
+  .single-product
+    div.product
+    .summary
+    .woocommerce-product-details__short-description {
+    margin-bottom: 24px;
+    font-size: 15px;
+  }
+
+  /* Cart */
+
+  .single-product div.product .summary form.cart {
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  /* Quantity */
+
+  .single-product div.product .summary form.cart .quantity .qty {
+    width: 68px;
+    height: 44px;
+  }
+
+  /* Add to Basket */
+
+  .single-product div.product .summary .single_add_to_cart_button {
+    min-height: 44px;
+    padding: 0 20px;
+  }
+
+  /* Product meta */
+
+  .single-product div.product .summary .product_meta {
+    padding-top: 18px;
+  }
+
+  /* Description / Reviews card */
+
+  .single-product div.product > .woocommerce-tabs {
+    margin-top: 56px;
+  }
+
+  .single-product div.product > .woocommerce-tabs ul.tabs li a {
+    min-height: 50px;
+    padding: 0 20px;
+  }
+
+  .single-product div.product > .woocommerce-tabs .woocommerce-Tabs-panel {
+    padding: 28px;
+  }
+}
+
+/* =========================================================
+   MOBILE — up to 767px
+   ========================================================= */
+
+@media (max-width: 767px) {
+  /* Main product layout */
+
+  .single-product div.product {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  /* Image */
+
+  .single-product div.product .woocommerce-product-gallery {
+    width: 100% !important;
+    margin-bottom: 32px;
+  }
+
+  .single-product div.product .woocommerce-product-gallery__wrapper,
+  .single-product div.product .woocommerce-product-gallery__image {
+    width: 100% !important;
+  }
+
+  /* Product title */
+
+  .single-product div.product .summary .product_title {
+    margin-bottom: 10px;
+    font-size: 26px;
+    line-height: 1.25;
+    letter-spacing: -0.2px;
+  }
+
+  /* Price */
+
+  .single-product div.product .summary .price {
+    margin-bottom: 22px;
+    font-size: 20px;
+  }
+
+  /* Short description */
+
+  .single-product
+    div.product
+    .summary
+    .woocommerce-product-details__short-description {
+    margin-bottom: 24px;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* Cart */
+
+  .single-product div.product .summary form.cart {
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  /* Quantity */
+
+  .single-product div.product .summary form.cart .quantity .qty {
+    width: 64px;
+    height: 44px;
+  }
+
+  /* Add to Basket */
+
+  .single-product div.product .summary .single_add_to_cart_button {
+    min-height: 44px;
+    padding: 0 18px;
+    font-size: 14px;
+  }
+
+  /* Product meta */
+
+  .single-product div.product .summary .product_meta {
+    gap: 7px;
+    padding-top: 18px;
+    font-size: 13px;
+  }
+
+  /* Description / Reviews */
+
+  .single-product div.product > .woocommerce-tabs {
+    margin-top: 48px;
+    border-radius: 4px;
+  }
+
+  /* Tabs */
+
+  .single-product div.product > .woocommerce-tabs ul.tabs {
+    width: 100%;
+  }
+
+  .single-product div.product > .woocommerce-tabs ul.tabs li {
+    flex: 1;
+  }
+
+  .single-product div.product > .woocommerce-tabs ul.tabs li a {
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 12px;
+    font-size: 13px;
+  }
+
+  /* Tab content */
+
+  .single-product div.product > .woocommerce-tabs .woocommerce-Tabs-panel {
+    padding: 24px 20px;
+  }
+
+  .single-product div.product > .woocommerce-tabs .woocommerce-Tabs-panel > h2 {
+    font-size: 19px;
+  }
+
+  .single-product div.product > .woocommerce-tabs .woocommerce-Tabs-panel p {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* Reviews */
+
+  .single-product div.product > .woocommerce-tabs .woocommerce-Reviews-title {
+    font-size: 19px;
+  }
+
+  .single-product div.product > .woocommerce-tabs .comment-reply-title {
+    font-size: 17px;
+  }
+}
+
+/* =========================================================
+   RELATED PRODUCTS — ALIGN PRODUCT CONTENT
+   ========================================================= */
+
+.single-product div.product > .related.products ul.products li.product {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Product link contains image + title */
+.single-product div.product > .related.products ul.products li.product > a {
+  display: block;
+}
+
+/* Push Add to Basket to the bottom */
+.single-product div.product > .related.products ul.products li.product .button {
+  margin-top: auto;
+}
+
+@media (max-width: 575px) {
+  .page-header .entry-title,
+  .site-footer .footer-inner,
+  .site-footer:not(.dynamic-footer),
+  .site-header .header-inner,
+  .site-header:not(.dynamic-header),
+  body:not([class*="elementor-page-"]) .site-main {
+    padding-inline-end: 20px !important;
+    padding-inline-start: 20px !important;
+  }
+}

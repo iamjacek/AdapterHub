@@ -1,0 +1,376 @@
+/* =========================================================
+   ADAPTERHUB — BRAND ARCHIVE
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   MAIN CONTENT
+   --------------------------------------------------------- */
+
+body.tax-product_brand .site-main {
+  max-width: unset !important;
+  width: 100%;
+  margin: 0;
+}
+
+/* ---------------------------------------------------------
+   BREADCRUMB
+   --------------------------------------------------------- */
+
+body.tax-product_brand .woocommerce-breadcrumb {
+  margin: 30px 0 20px !important;
+  padding: 0 80px !important;
+
+  font-family: Inter, sans-serif;
+  font-size: 13px !important;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #6b7280 !important;
+}
+
+body.tax-product_brand .woocommerce-breadcrumb a {
+  color: #6b7280;
+  text-decoration: none;
+}
+
+body.tax-product_brand .woocommerce-breadcrumb a:hover {
+  color: #111111;
+}
+
+/* ---------------------------------------------------------
+   BRAND TITLE
+   --------------------------------------------------------- */
+
+body.tax-product_brand .woocommerce-products-header .page-title {
+  margin: 0 0 28px;
+  padding: 0 80px;
+
+  font-family: Inter, sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  color: #111111;
+}
+
+/* ---------------------------------------------------------
+   TOOLBAR
+   --------------------------------------------------------- */
+
+body.tax-product_brand .woocommerce-result-count {
+  margin: 0;
+  padding: 0 80px;
+
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #4b5563;
+}
+
+body.tax-product_brand .woocommerce-ordering {
+  margin: 0;
+  padding-right: 80px;
+}
+
+body.tax-product_brand .woocommerce-ordering select {
+  height: 42px;
+  padding: 0 44px 0 12px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+
+  background-color: #ffffff;
+  color: #111111;
+
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+
+  cursor: pointer;
+}
+
+/* ---------------------------------------------------------
+   PRODUCT GRID
+   --------------------------------------------------------- */
+
+body.tax-product_brand ul.products {
+  display: grid;
+  gap: 48px 24px;
+
+  margin: 0;
+  padding: 20px 80px 0;
+}
+
+body.tax-product_brand ul.products::before,
+body.tax-product_brand ul.products::after {
+  display: none;
+}
+
+body.tax-product_brand ul.products li.product {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+body.tax-product_brand ul.products li.product > a {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------------------------------------------------------
+   PRODUCT IMAGE
+   --------------------------------------------------------- */
+
+body.tax-product_brand ul.products li.product a img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+
+  margin: 0 0 14px;
+}
+
+/* ---------------------------------------------------------
+   PRODUCT TITLE
+   --------------------------------------------------------- */
+
+body.tax-product_brand ul.products li.product .woocommerce-loop-product__title {
+  min-height: 41px;
+
+  margin: 0;
+  padding: 0;
+
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #111111;
+}
+
+/* ---------------------------------------------------------
+   PRICE
+   --------------------------------------------------------- */
+
+body.tax-product_brand ul.products li.product .price {
+  min-height: 20px;
+
+  margin: 5px 0 10px;
+  padding: 0;
+
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #111111;
+}
+
+/* ---------------------------------------------------------
+   ADD TO BASKET
+   --------------------------------------------------------- */
+
+body.tax-product_brand ul.products li.product .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 42px;
+
+  margin: auto 0 0;
+  padding: 0 18px;
+
+  border: 1px solid #1e5eff;
+  border-radius: 4px;
+
+  background: #1e5eff;
+  color: #ffffff;
+
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+body.tax-product_brand ul.products li.product .button:hover {
+  border-color: #1648c7;
+  background: #1648c7;
+  color: #ffffff;
+}
+
+/* Hide View Cart */
+
+body.tax-product_brand ul.products li.product .added_to_cart {
+  display: none !important;
+}
+
+/* ---------------------------------------------------------
+   DESKTOP GRID
+   --------------------------------------------------------- */
+
+@media (min-width: 1501px) {
+  body.tax-product_brand ul.products {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1500px) {
+  body.tax-product_brand ul.products {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ---------------------------------------------------------
+   TABLET
+   --------------------------------------------------------- */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  body.tax-product_brand .woocommerce-breadcrumb {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+
+  body.tax-product_brand .woocommerce-products-header .page-title {
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 32px;
+  }
+
+  body.tax-product_brand .woocommerce-result-count {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  body.tax-product_brand .woocommerce-ordering {
+    padding-right: 40px;
+  }
+
+  body.tax-product_brand ul.products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 767px) {
+  body.tax-product_brand .woocommerce-breadcrumb {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  body.tax-product_brand .woocommerce-products-header .page-title {
+    margin-bottom: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 28px;
+  }
+
+  body.tax-product_brand .woocommerce-result-count {
+    float: none !important;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 13px;
+  }
+
+  body.tax-product_brand .woocommerce-ordering {
+    float: none !important;
+    padding-right: 20px;
+  }
+
+  body.tax-product_brand ul.products {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  body.tax-product_brand ul.products li.product {
+    width: 100% !important;
+    float: none !important;
+    clear: none !important;
+  }
+}
+
+/* =========================================================
+   BRAND ARCHIVE — MOBILE TOOLBAR
+   ========================================================= */
+
+@media (max-width: 767px) {
+  body.tax-product_brand .woocommerce-ordering {
+    float: none !important;
+    display: block;
+    width: auto;
+    margin: 0 20px 12px 20px;
+    padding: 0;
+  }
+
+  body.tax-product_brand .woocommerce-ordering select {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  body.tax-product_brand .woocommerce-result-count {
+    float: none !important;
+    display: block;
+    width: auto;
+    margin: 0 20px 28px 20px;
+    padding: 0;
+  }
+}
+
+/* =========================================================
+   BRAND ARCHIVE — CUSTOM SORTING CHEVRON
+   ========================================================= */
+
+body.tax-product_brand .woocommerce-ordering select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  padding-right: 44px;
+
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 14px 14px;
+}
+
+/* =========================================================
+   BRAND ARCHIVE — EQUAL PRODUCT CARD HEIGHT
+   ========================================================= */
+
+body.tax-product_brand ul.products li.product {
+  display: flex;
+  flex-direction: column;
+}
+
+body.tax-product_brand ul.products li.product > a {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+body.tax-product_brand ul.products li.product .woocommerce-loop-product__title {
+  min-height: 41px;
+}
+
+body.tax-product_brand ul.products li.product .price {
+  min-height: 20px;
+}
+
+body.tax-product_brand ul.products li.product .button {
+  margin-top: auto;
+}

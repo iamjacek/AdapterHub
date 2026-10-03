@@ -59,6 +59,10 @@ Text Domain: adapterhub-child
   transition: all 0.2s ease;
 }
 
+.adapterhub-car-brands-all .adapterhub-car-brand-item {
+  display: flex !important;
+}
+
 /* Hover */
 .adapterhub-car-brand-item:hover {
   border-color: #1e5eff;
@@ -109,16 +113,8 @@ Text Domain: adapterhub-child
    MORE BRANDS
    ========================================================= */
 
-.adapterhub-more-brands {
-  background: #f8f9fa;
-}
-
 .adapterhub-more-brands .adapterhub-car-brand-name {
   transform: translateY(13px);
-}
-
-.adapterhub-more-brands:hover {
-  background: #f3f4f6;
 }
 
 .adapterhub-more-brands-icon {
@@ -271,8 +267,6 @@ Text Domain: adapterhub-child
   width: 100%;
   height: 190px;
   padding: 12px;
-
-  background: #f8f9fa;
 }
 
 .adapterhub-product-image img {

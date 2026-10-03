@@ -128,7 +128,8 @@ body.woocommerce-shop .site-main {
 
 .woocommerce-ordering {
   margin: 0;
-  padding-right: 80px;
+  float: right;
+  padding-left: 20px;
 }
 
 .woocommerce-ordering select {
@@ -244,7 +245,7 @@ body.woocommerce-shop .site-main {
    ========================================================= */
 
 .woocommerce ul.products li.product .price {
-  margin: 5px 0 0;
+  margin: 5px 0 10px;
   padding: 0;
   font-family: Inter, sans-serif;
   font-size: 14px;
@@ -390,5 +391,185 @@ body.woocommerce-shop .site-main {
 
   .woocommerce ul.products li.product .price {
     font-size: 14px;
+  }
+}
+
+/* =========================================================
+   SHOP — BRAND FILTER
+   ========================================================= */
+
+.adapterhub-shop-filters {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 28px;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.adapterhub-shop-filters::-webkit-scrollbar {
+  display: none;
+}
+
+.adapterhub-shop-filter {
+  flex: 0 0 auto;
+  padding: 8px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #111111;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.adapterhub-shop-filter:hover {
+  border-color: #1e5eff;
+  color: #1e5eff;
+  text-decoration: none;
+}
+
+.adapterhub-shop-filter.is-active {
+  border-color: #1e5eff;
+  background: #1e5eff;
+  color: #ffffff;
+}
+
+.adapterhub-shop-filter.is-active:hover {
+  border-color: #1648c7;
+  background: #1648c7;
+  color: #ffffff;
+}
+
+/* Tablet */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .adapterhub-shop-filters {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 767px) {
+  .adapterhub-shop-filters {
+    gap: 6px;
+    margin-bottom: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .adapterhub-shop-filter {
+    padding: 7px 14px;
+    font-size: 13px;
+  }
+}
+
+/* =========================================================
+   SHOP — HIDE VIEW CART LINK
+   ========================================================= */
+
+.woocommerce ul.products li.product .added_to_cart {
+  display: none !important;
+}
+
+/* =========================================================
+   PRODUCT PAGE — BREADCRUMB
+   ========================================================= */
+
+.single-product .woocommerce-breadcrumb {
+  padding-top: 0 !important;
+  padding-bottom: 20px !important;
+  padding-left: 80px !important;
+  padding-right: 80px !important;
+  margin: 0 !important;
+
+  font-family: Inter, sans-serif;
+  font-size: 13px !important;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #6b7280 !important;
+}
+
+.single-product .woocommerce-breadcrumb a {
+  color: #6b7280;
+  text-decoration: none;
+}
+
+.single-product .woocommerce-breadcrumb a:hover {
+  color: #111111;
+  text-decoration: none;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .single-product .woocommerce-breadcrumb {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .single-product .woocommerce-breadcrumb {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+/* =========================================================
+   SHOP — EQUAL PRODUCT CARD HEIGHT
+   ========================================================= */
+
+.woocommerce ul.products li.product {
+  display: flex;
+  flex-direction: column;
+}
+
+.woocommerce ul.products li.product > a {
+  display: flex;
+  flex-direction: column;
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+  min-height: 41px;
+}
+
+.woocommerce ul.products li.product .price {
+  min-height: 20px;
+}
+
+.woocommerce ul.products li.product .button {
+  margin-top: auto;
+}
+
+@media (max-width: 767px) {
+  .woocommerce .woocommerce-result-count {
+    float: none !important;
+    display: inline-block;
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 0;
+    vertical-align: middle;
+  }
+
+  .woocommerce .woocommerce-ordering {
+    float: none !important;
+    display: inline-block;
+    margin: 0 0 0 auto;
+    padding-right: 20px;
+    vertical-align: middle;
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  .woocommerce .woocommerce-ordering select {
+    width: 100%;
   }
 }

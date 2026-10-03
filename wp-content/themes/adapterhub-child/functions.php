@@ -28,10 +28,43 @@ function adapterhub_shop_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'adapterhub_shop_styles' );
 
-// add subtitle to shop page
-function adapterhub_shop_subtitle() {
-    if ( is_shop() ) {
-        echo '<p class="adapterhub-shop-subtitle">High-quality speaker adapters for popular car brands. Easy installation, perfect fit and better sound in your car.</p>';
+function adapterhub_product_styles() {
+    if ( is_product() ) {
+        wp_enqueue_style(
+            'adapterhub-product',
+            get_stylesheet_directory_uri() . '/product-style.css',
+            array(),
+            wp_get_theme()->get( 'Version' )
+        );
     }
 }
-add_action( 'woocommerce_before_shop_loop', 'adapterhub_shop_subtitle', 5 );
+
+add_action( 'wp_enqueue_scripts', 'adapterhub_product_styles' );
+
+function adapterhub_car_brands_styles() {
+
+    if ( is_page( 'car-brands' ) ) {
+        wp_enqueue_style(
+            'adapterhub-car-brands',
+            get_stylesheet_directory_uri() . '/car-brands-style.css',
+            array(),
+            wp_get_theme()->get( 'Version' )
+        );
+    }
+}
+
+add_action( 'wp_enqueue_scripts', 'adapterhub_car_brands_styles' );
+
+function adapterhub_brand_styles() {
+
+    if ( is_tax( 'product_brand' ) ) {
+        wp_enqueue_style(
+            'adapterhub-brand',
+            get_stylesheet_directory_uri() . '/brand-style.css',
+            array(),
+            wp_get_theme()->get( 'Version' )
+        );
+    }
+}
+
+add_action( 'wp_enqueue_scripts', 'adapterhub_brand_styles' );
