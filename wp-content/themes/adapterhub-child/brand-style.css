@@ -374,3 +374,27 @@ body.tax-product_brand ul.products li.product .price {
 body.tax-product_brand ul.products li.product .button {
   margin-top: auto;
 }
+
+body.tax-product_brand .term-description {
+  margin: 0 0 28px;
+  padding: 0 80px;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #6b7280;
+}
+
+@media (max-width: 1024px) {
+  body.tax-product_brand .term-description {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  body.tax-product_brand .term-description {
+    margin-bottom: 24px;
+    padding: 0 20px;
+    font-size: 15px;
+  }
+}
