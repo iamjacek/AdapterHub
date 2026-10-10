@@ -115,9 +115,9 @@ body.page-id-588 .adapter-configurator-input-row input:focus {
 
 body.page-id-588 .adapter-configurator-preview {
   min-height: 420px;
-  border: 1px solid #e5e7eb;
-  border-radius: 6px;
-  background: #f8f9fa;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Tablet */
@@ -237,6 +237,9 @@ body.page-id-588 .adapter-configurator-3d-stage {
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background: #f8f9fa;
 }
 
 body.page-id-588 .adapter-configurator-3d-placeholder {
@@ -262,4 +265,46 @@ body.page-id-588 .adapter-configurator-holes-warning {
 
 body.page-id-588 .adapter-configurator-holes-warning-show {
   display: block;
+}
+
+body.page-id-588 .adapter-configurator-3d-stage canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  touch-action: none;
+}
+
+body.page-id-588 .adapter-configurator-3d-stage canvas:active {
+  cursor: grabbing;
+}
+
+body.page-id-588 .adapter-configurator-preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+body.page-id-588 .adapter-configurator-preview-header span {
+  font-family: "Inter", Sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--e-global-color-accent);
+}
+
+body.page-id-588 .adapter-configurator-reset {
+  font-family: "Inter", Sans-serif;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 16px;
+  color: var(--e-global-color-text);
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+body.page-id-588 .adapter-configurator-reset:hover {
+  opacity: 1;
 }

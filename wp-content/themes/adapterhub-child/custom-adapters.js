@@ -84,25 +84,54 @@ document.addEventListener("DOMContentLoaded", function () {
 
   stage.appendChild(renderer.domElement);
 
+  const placeholder = stage.querySelector(
+    ".adapter-configurator-3d-placeholder",
+  );
+
+  if (placeholder) {
+    placeholder.remove();
+  }
   /* =================================
        LIGHTING
     ================================= */
 
-  const ambientLight = new THREE.AmbientLight(0xffffff, 2);
+  /* ---------------------------------
+   Soft ambient light
+--------------------------------- */
+
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
 
   scene.add(ambientLight);
 
-  const keyLight = new THREE.DirectionalLight(0xffffff, 3);
+  /* ---------------------------------
+   Main key light
+--------------------------------- */
 
-  keyLight.position.set(100, 150, 200);
+  const keyLight = new THREE.DirectionalLight(0xffffff, 3.5);
+
+  keyLight.position.set(120, 180, 220);
 
   scene.add(keyLight);
 
-  const fillLight = new THREE.DirectionalLight(0xffffff, 1.5);
+  /* ---------------------------------
+   Fill light
+--------------------------------- */
 
-  fillLight.position.set(-150, 50, 100);
+  const fillLight = new THREE.DirectionalLight(0xffffff, 1.2);
+
+  fillLight.position.set(-180, 80, 120);
 
   scene.add(fillLight);
+
+  /* ---------------------------------
+   Rim light
+--------------------------------- */
+
+  const rimLight = new THREE.DirectionalLight(0xffffff, 2);
+
+  rimLight.position.set(-100, 150, -180);
+
+  scene.add(rimLight);
 
   /* =================================
        ADAPTER GROUP
@@ -117,10 +146,39 @@ document.addEventListener("DOMContentLoaded", function () {
     ================================= */
 
   const adapterMaterial = new THREE.MeshStandardMaterial({
-    color: 0x202020,
-    roughness: 0.65,
-    metalness: 0.05,
+    color: 0x18191b,
+    roughness: 0.78,
+    metalness: 0.0,
   });
+
+  adapterMaterial.onBeforeCompile = function (shader) {
+    shader.fragmentShader = shader.fragmentShader.replace(
+      "#include <roughnessmap_fragment>",
+      `
+            #include <roughnessmap_fragment>
+
+            float noise =
+            fract(
+                sin(
+                    dot(
+                        vViewPosition.xy * 0.18,
+                        vec2(12.9898, 78.233)
+                    )
+                ) * 43758.5453
+            );
+
+            roughnessFactor +=
+                (noise - 0.5) * 0.055;
+
+                    roughnessFactor =
+                        clamp(
+                            roughnessFactor,
+                            0.65,
+                            0.95
+                        );
+                    `,
+    );
+  };
 
   let adapter = null;
 
@@ -143,6 +201,17 @@ document.addEventListener("DOMContentLoaded", function () {
   /* =================================
        BUILD ADAPTER
     ================================= */
+  const defaultAdapterConfig = {
+    shape: "round",
+    width: 180,
+    height: 180,
+    thickness: 12,
+    cutout: 145,
+    holes: 4,
+    holeSpacing: 160,
+    offsetX: 0,
+    offsetY: 0,
+  };
 
   function buildAdapter() {
     const width = Math.max(
@@ -218,11 +287,15 @@ document.addEventListener("DOMContentLoaded", function () {
            Speaker cutout
         ----------------------------- */
 
+    const offsetX = getValue(".adapter-configurator-offset-x-input", 0);
+
+    const offsetY = getValue(".adapter-configurator-offset-y-input", 0);
+
     const hole = new THREE.Path();
 
     const radius = safeCutout / 2;
 
-    hole.absarc(0, 0, radius, 0, Math.PI * 2, false);
+    hole.absarc(offsetX, offsetY, radius, 0, Math.PI * 2, false);
 
     shape.holes.push(hole);
 
@@ -242,6 +315,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const mountingHoleRadius = 4;
 
+    let cutoutValid = true;
+
     const warningElement = document.querySelector(
       ".adapter-configurator-holes-warning",
     );
@@ -258,6 +333,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const edgeMargin = 1;
 
+    if (
+      offsetX - cutoutRadius < -halfWidth ||
+      offsetX + cutoutRadius > halfWidth ||
+      offsetY - cutoutRadius < -halfHeight ||
+      offsetY + cutoutRadius > halfHeight
+    ) {
+      cutoutValid = false;
+    }
+
     /* --------------------------------
    Check each hole
 -------------------------------- */
@@ -273,10 +357,12 @@ document.addEventListener("DOMContentLoaded", function () {
        Check speaker cutout overlap
     ----------------------------- */
 
-      const distanceFromCenter = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
+      const distanceFromCutout = Math.sqrt(
+        Math.pow(x - offsetX, 2) + Math.pow(y - offsetY, 2),
+      );
 
       if (
-        distanceFromCenter - mountingHoleRadius <=
+        distanceFromCutout - mountingHoleRadius <=
         cutoutRadius + edgeMargin
       ) {
         mountingHolesValid = false;
@@ -313,7 +399,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (warningElement) {
       warningElement.classList.toggle(
         "adapter-configurator-holes-warning-show",
-        !mountingHolesValid,
+        !cutoutValid || !mountingHolesValid,
       );
     }
 
@@ -322,7 +408,7 @@ document.addEventListener("DOMContentLoaded", function () {
    only when valid
 -------------------------------- */
 
-    if (mountingHolesValid) {
+    if (cutoutValid && mountingHolesValid) {
       for (let i = 0; i < holesCount; i++) {
         const angle = (i / holesCount) * Math.PI * 2 - Math.PI / 2;
 
@@ -426,6 +512,99 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   /* =================================
+   RESET CONFIGURATION
+================================= */
+
+  const resetButton = document.querySelector(".adapter-configurator-reset");
+
+  if (resetButton) {
+    resetButton.addEventListener("click", function () {
+      const shapeInput = document.querySelector(
+        ".adapter-configurator-shape-select",
+      );
+
+      const widthInput = document.querySelector(
+        ".adapter-configurator-width-input",
+      );
+
+      const heightInput = document.querySelector(
+        ".adapter-configurator-height-input",
+      );
+
+      const thicknessInput = document.querySelector(
+        ".adapter-configurator-thickness-input",
+      );
+
+      const cutoutInput = document.querySelector(
+        ".adapter-configurator-cutout-input",
+      );
+
+      const holesInput = document.querySelector(
+        ".adapter-configurator-holes-count-input",
+      );
+
+      const spacingInput = document.querySelector(
+        ".adapter-configurator-hole-spacing-input",
+      );
+
+      const offsetXInput = document.querySelector(
+        ".adapter-configurator-offset-x-input",
+      );
+
+      const offsetYInput = document.querySelector(
+        ".adapter-configurator-offset-y-input",
+      );
+
+      if (shapeInput) {
+        shapeInput.value = defaultAdapterConfig.shape;
+      }
+
+      if (widthInput) {
+        widthInput.value = defaultAdapterConfig.width;
+      }
+
+      if (heightInput) {
+        heightInput.value = defaultAdapterConfig.height;
+      }
+
+      if (thicknessInput) {
+        thicknessInput.value = defaultAdapterConfig.thickness;
+      }
+
+      if (cutoutInput) {
+        cutoutInput.value = defaultAdapterConfig.cutout;
+      }
+
+      if (holesInput) {
+        holesInput.value = defaultAdapterConfig.holes;
+      }
+
+      if (spacingInput) {
+        spacingInput.value = defaultAdapterConfig.holeSpacing;
+      }
+
+      if (offsetXInput) {
+        offsetXInput.value = defaultAdapterConfig.offsetX;
+      }
+
+      if (offsetYInput) {
+        offsetYInput.value = defaultAdapterConfig.offsetY;
+      }
+
+      /* Rebuild model */
+
+      buildAdapter();
+
+      /* Reset rotation */
+
+      adapterGroup.rotation.x = -0.35;
+      adapterGroup.rotation.y = 0.35;
+
+      fitCameraToAdapter();
+    });
+  }
+
+  /* =================================
        INPUT EVENTS
     ================================= */
 
@@ -443,6 +622,10 @@ document.addEventListener("DOMContentLoaded", function () {
     ".adapter-configurator-holes-count-input",
 
     ".adapter-configurator-hole-spacing-input",
+
+    ".adapter-configurator-offset-x-input",
+
+    ".adapter-configurator-offset-y-input",
   ];
 
   inputs.forEach(function (selector) {
@@ -489,6 +672,89 @@ document.addEventListener("DOMContentLoaded", function () {
 
     input.addEventListener("change", buildAdapter);
   });
+
+  /* =================================
+   3D INTERACTION
+================================= */
+
+  let isDragging = false;
+
+  let previousPointerX = 0;
+  let previousPointerY = 0;
+
+  /* ---------------------------------
+   Pointer down
+--------------------------------- */
+
+  renderer.domElement.addEventListener("pointerdown", function (event) {
+    isDragging = true;
+
+    previousPointerX = event.clientX;
+    previousPointerY = event.clientY;
+
+    renderer.domElement.setPointerCapture(event.pointerId);
+  });
+
+  /* ---------------------------------
+   Pointer move
+--------------------------------- */
+
+  renderer.domElement.addEventListener("pointermove", function (event) {
+    if (!isDragging) {
+      return;
+    }
+
+    const deltaX = event.clientX - previousPointerX;
+
+    const deltaY = event.clientY - previousPointerY;
+
+    adapterGroup.rotation.y += deltaX * 0.01;
+
+    adapterGroup.rotation.x += deltaY * 0.01;
+
+    /* Prevent flipping upside down */
+
+    adapterGroup.rotation.x = THREE.MathUtils.clamp(
+      adapterGroup.rotation.x,
+      -1.3,
+      1.3,
+    );
+
+    previousPointerX = event.clientX;
+
+    previousPointerY = event.clientY;
+  });
+
+  /* ---------------------------------
+   Pointer up
+--------------------------------- */
+
+  renderer.domElement.addEventListener("pointerup", function (event) {
+    isDragging = false;
+
+    renderer.domElement.releasePointerCapture(event.pointerId);
+  });
+
+  /* ---------------------------------
+   Wheel zoom
+--------------------------------- */
+
+  renderer.domElement.addEventListener(
+    "wheel",
+    function (event) {
+      event.preventDefault();
+
+      const zoomSpeed = 0.0015;
+
+      camera.position.z *= 1 + event.deltaY * zoomSpeed;
+
+      camera.position.z = THREE.MathUtils.clamp(camera.position.z, 100, 1000);
+    },
+    {
+      passive: false,
+    },
+  );
+
   /* =================================
        RESIZE
     ================================= */
@@ -520,8 +786,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function animate() {
     requestAnimationFrame(animate);
-
-    adapterGroup.rotation.z += 0.002;
 
     renderer.render(scene, camera);
   }

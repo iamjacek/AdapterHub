@@ -13,6 +13,10 @@ Text Domain: adapterhub-child
   padding: 0;
 }
 
+body {
+  font-family: "Inter", Sans-serif;
+}
+
 @media (max-width: 767px) {
   .hero-mobile-white,
   .hero-mobile-white p,
