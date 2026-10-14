@@ -1,7 +1,3 @@
-/* ========================================
-   Custom Adapters
-   ======================================== */
-
 body.page-id-588 {
   --adapterhub-custom-gap: 48px;
 }
@@ -10,25 +6,17 @@ body.page-id-588 .adapter-configurator-group-title {
   margin: 15px 0 10px;
 }
 
-/* Configuration / Preview layout */
-
 body.page-id-588 .adapter-configurator-layout {
   margin-top: 40px;
 }
-
-/* Section headings */
 
 body.page-id-588 .adapter-configurator-section-title {
   margin: 0 0 20px;
 }
 
-/* Field group headings */
-
 body.page-id-588 .adapter-configurator-field-title {
   margin: 28px 0 10px;
 }
-
-/* Unit hint */
 
 body.page-id-588 .adapter-configurator-unit {
   margin: 6px 0 0;
@@ -37,9 +25,8 @@ body.page-id-588 .adapter-configurator-unit {
   color: #6b7280;
 }
 
-/* Select */
-
-body.page-id-588 .adapter-configurator-shape-select {
+body.page-id-588 .adapter-configurator-shape-select,
+body.page-id-588 .adapter-configurator-screw-size-select {
   width: 100%;
   min-height: 46px;
   padding: 0 40px 0 14px;
@@ -53,19 +40,13 @@ body.page-id-588 .adapter-configurator-shape-select {
   cursor: pointer;
 }
 
-/* Dimension rows */
-
 body.page-id-588 .adapter-configurator-dimension-row {
   margin-top: 12px;
 }
 
-/* Dimension label */
-
 body.page-id-588 .adapter-configurator-dimension-label {
   flex: 1;
 }
-
-/* Dimension input wrapper */
 
 body.page-id-588 .adapter-configurator-input-wrapper {
   display: flex;
@@ -98,37 +79,26 @@ body.page-id-588 .adapter-configurator-input-row input {
   font-weight: 400;
 }
 
-/* Unit */
-
 body.page-id-588 .adapter-configurator-unit-label {
   font-size: 14px;
   color: #6b7280;
 }
 
-/* Focus */
 body.page-id-588 .adapter-configurator-input-row input:focus {
   outline: none;
   border-color: #1e5eff;
 }
 
-/* 3D preview area */
-
 body.page-id-588 .adapter-configurator-preview {
   min-height: 420px;
   max-width: 560px;
-  margin-left: auto;
-  margin-right: auto;
 }
-
-/* Tablet */
 
 @media (max-width: 1024px) {
   body.page-id-588 .adapter-configurator-layout {
     margin-top: 32px;
   }
 }
-
-/* Mobile */
 
 @media (max-width: 767px) {
   body.page-id-588 .adapter-configurator-layout {
@@ -148,7 +118,8 @@ body.page-id-588 .adapter-configurator-preview {
   }
 }
 
-body.page-id-588 .adapter-configurator-shape-select {
+body.page-id-588 .adapter-configurator-shape-select,
+body.page-id-588 .adapter-configurator-screw-size-select {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -167,7 +138,8 @@ body.page-id-588 .elementor-widget-heading:nth-child(2),
 body.page-id-588 .elementor-widget-heading:nth-child(3),
 body.page-id-588 .elementor-widget-heading:nth-child(4),
 body.page-id-588 .elementor-widget-heading:nth-child(9),
-body.page-id-588 .elementor-widget-heading:nth-child(12) {
+body.page-id-588 .elementor-widget-heading:nth-child(12),
+body.page-id-588 .elementor-widget-heading:nth-child(13) {
   width: 100%;
 }
 
@@ -307,4 +279,271 @@ body.page-id-588 .adapter-configurator-reset {
 
 body.page-id-588 .adapter-configurator-reset:hover {
   opacity: 1;
+}
+
+.adapter-configurator-input-error {
+  border-color: #dc2626 !important;
+  box-shadow: 0 0 0 1px #dc2626 !important;
+}
+
+.adapter-configurator-field-error {
+  display: block;
+  flex-basis: 100%;
+  width: 100%;
+  margin-top: 5px;
+  color: #dc2626;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.adapter-configurator-summary {
+  padding-block-end: 0;
+  padding-block-start: 0;
+  padding-inline-end: 0;
+  padding-inline-start: 0;
+}
+
+.adapter-configurator-summary-content {
+  width: 100%;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-family: Inter, sans-serif;
+  color: #111111;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1024px) {
+  .adapter-configurator-summary-content {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.adapter-configurator-summary-content h3 {
+  margin: 0 0 20px;
+  color: #111111;
+  font-family: Inter, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.adapter-configurator-summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f3f4f6;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.adapter-configurator-summary-row:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.adapter-configurator-summary-row > span {
+  color: #6b7280;
+  font-weight: 400;
+}
+
+.adapter-configurator-summary-row strong {
+  color: #111111;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.adapter-configurator-actions {
+  width: 100%;
+  margin-top: 20px;
+  font-family: Inter, sans-serif;
+}
+@media (min-width: 1024px) {
+  .adapter-configurator-actions {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.adapter-configurator-add-to-configuration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 48px;
+  margin-top: 10px;
+  padding: 14px 24px;
+
+  background: var(--e-global-color-primary);
+  border: 1px solid var(--e-global-color-primary);
+  border-radius: 4px;
+
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.adapter-configurator-add-to-configuration:hover {
+  background: var(--e-global-color-secondary);
+  border-color: var(--e-global-color-secondary);
+  color: #ffffff;
+}
+
+.adapter-configurator-add-to-configuration:focus-visible {
+  outline: 2px solid var(--e-global-color-primary);
+  outline-offset: 3px;
+}
+
+.adapter-configurator-production-note {
+  margin: 12px 0 0;
+  padding: 0;
+  color: #6b7280;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.6;
+
+  text-align: left;
+}
+
+.adapterhub-order-info {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+  margin: 28px 0 0;
+  font-family: inherit;
+}
+
+.adapterhub-order-info__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  min-width: 0;
+  padding: 22px 18px;
+  background: var(--e-global-color-light, #f9fafb);
+  border: 1px solid var(--e-global-color-border, #e5e7eb);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.adapterhub-order-info__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  color: var(--e-global-color-primary, #2563eb);
+  background: var(--e-global-color-white, #ffffff);
+  border: 1px solid var(--e-global-color-border, #e5e7eb);
+  border-radius: 8px;
+}
+
+.adapterhub-order-info__icon svg {
+  display: block;
+  width: 23px;
+  height: 23px;
+}
+
+.adapterhub-order-info__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.adapterhub-order-info__content h3 {
+  margin: 1px 0 8px;
+  padding: 0;
+  color: var(--e-global-color-text, #111827);
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.adapterhub-order-info__content p {
+  margin: 0;
+  padding: 0;
+  color: var(--e-global-color-muted, #6b7280);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .adapterhub-order-info {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .adapterhub-order-info__item {
+    padding: 18px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .adapterhub-order-info {
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .adapterhub-order-info__item {
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .adapterhub-order-info__icon {
+    flex-basis: 38px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .adapterhub-order-info__icon svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .adapterhub-order-info__content h3 {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .adapterhub-order-info__content p {
+    font-size: 13px;
+  }
+}
+
+.adapterhub-custom-usp ul {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .adapterhub-custom-usp ul {
+    flex-direction: row;
+    gap: 20px;
+  }
+  .adapterhub-custom-usp ul li {
+    flex: 1;
+  }
 }

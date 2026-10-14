@@ -305,6 +305,10 @@ body.woocommerce-shop .site-main {
   .woocommerce ul.products {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
+
+  .woocommerce-ordering {
+    padding-right: 80px;
+  }
 }
 
 /* =========================================================
