@@ -1,0 +1,85 @@
+.adapterhub-guide-products ul.products {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px 24px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.adapterhub-guide-products ul.products li.product a img {
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+
+.adapterhub-guide-products
+  ul.products
+  li.product
+  .woocommerce-loop-product__title {
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #111111;
+}
+
+.adapterhub-guide-products ul.products li.product .price {
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #111111;
+}
+
+.adapterhub-guide-products ul.products li.product .button {
+  width: 100%;
+  min-height: 42px;
+  margin-top: auto;
+  border: 1px solid #1e5eff;
+  border-radius: 4px;
+  background: #1e5eff;
+  color: #ffffff;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.adapterhub-guide-products ul.products li.product .button:hover {
+  background-color: #1648cc;
+  border-color: #1648cc;
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .adapterhub-guide-products ul.products {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.adapterhub-guide-products ul.products li.product {
+  display: flex;
+  flex-direction: column;
+}
+
+.adapterhub-guide-products ul.products li.product > a {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.adapterhub-guide-products .woocommerce-loop-product__title {
+  min-height: 54px;
+}
+
+.adapterhub-guide-products ul.products li.product .price {
+  min-height: 20px;
+}
+
+.adapterhub-guide-products ul.products li.product .button {
+  margin-top: auto;
+}
+
+.adapterhub-guide-products .added_to_cart {
+  display: none !important;
+}

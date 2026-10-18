@@ -314,14 +314,6 @@ body.page-id-588 .adapter-configurator-reset:hover {
   box-sizing: border-box;
 }
 
-@media (min-width: 1024px) {
-  .adapter-configurator-summary-content {
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
 .adapter-configurator-summary-content h3 {
   margin: 0 0 20px;
   color: #111111;
@@ -365,13 +357,6 @@ body.page-id-588 .adapter-configurator-reset:hover {
   width: 100%;
   margin-top: 20px;
   font-family: Inter, sans-serif;
-}
-@media (min-width: 1024px) {
-  .adapter-configurator-actions {
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 
 .adapter-configurator-add-to-configuration {
@@ -425,11 +410,21 @@ body.page-id-588 .adapter-configurator-reset:hover {
 
 .adapterhub-order-info {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(1, minmax(0, 1fr));
   gap: 16px;
   width: 100%;
-  margin: 28px 0 0;
+  margin: 21px 0 0;
   font-family: inherit;
+}
+
+@media (max-width: 1024px) {
+  .adapterhub-order-info {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    width: 100%;
+    margin: 28px 0 0;
+  }
 }
 
 .adapterhub-order-info__item {

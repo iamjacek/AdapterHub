@@ -1,0 +1,103 @@
+main#content.site-main .page-header .entry-title {
+  margin: 40px 0 30px;
+}
+
+main#content.site-main .page-content,
+main#content.site-main .woocommerce {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+main#content.site-main .woocommerce-MyAccount-navigation,
+main#content.site-main .woocommerce-MyAccount-content {
+  box-sizing: border-box;
+}
+
+main#content.site-main .woocommerce-MyAccount-navigation ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 30px;
+  padding: 0;
+  list-style: none;
+}
+
+main#content.site-main .woocommerce-MyAccount-navigation li {
+  margin: 0;
+  padding: 0;
+}
+
+main#content.site-main .woocommerce-MyAccount-navigation a {
+  display: block;
+  padding: 12px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #111111;
+  font-weight: 500;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+main#content.site-main .woocommerce-MyAccount-navigation a:hover,
+main#content.site-main .woocommerce-MyAccount-navigation .is-active a {
+  border-color: #1e5eff;
+  background: #1e5eff;
+  color: #ffffff;
+}
+
+main#content.site-main .woocommerce-MyAccount-content {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  overflow-wrap: anywhere;
+}
+
+main#content.site-main .woocommerce-Address-title {
+  margin-bottom: 20px;
+}
+
+main#content.site-main .woocommerce-MyAccount-content p {
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+main#content.site-main .woocommerce-MyAccount-content a {
+  color: #1e5eff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+main#content.site-main .woocommerce-MyAccount-content a:hover {
+  color: #1648cc;
+}
+
+@media (max-width: 767px) {
+  main#content.site-main .woocommerce-MyAccount-navigation ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  main#content.site-main .woocommerce-MyAccount-navigation li {
+    min-width: 0;
+  }
+
+  main#content.site-main .woocommerce-MyAccount-navigation a {
+    height: 100%;
+    padding: 12px 10px;
+    text-align: center;
+    overflow-wrap: anywhere;
+  }
+
+  main#content.site-main .woocommerce-MyAccount-content {
+    padding: 16px;
+  }
+}

@@ -110,3 +110,51 @@ function adapterhub_custom_adapters_module( $tag, $handle, $src ) {
 }
 
 add_filter( 'script_loader_tag', 'adapterhub_custom_adapters_module', 10, 3 );
+
+function adapterhub_guide_product_styles() {
+    if ( is_page( 'car-audio-upgrade-guide' ) ) {
+        wp_enqueue_style(
+            'adapterhub-guide-products',
+            get_stylesheet_directory_uri() . '/guide-products-style.css',
+            array(),
+            wp_get_theme()->get( 'Version' )
+        );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'adapterhub_guide_product_styles' );
+
+function adapterhub_search_results_styles() {
+    if ( is_search() ) {
+        wp_enqueue_style(
+            'adapterhub-search-results',
+            get_stylesheet_directory_uri() . '/search-results-style.css',
+            array(),
+            wp_get_theme()->get( 'Version' )
+        );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'adapterhub_search_results_styles' );
+
+function adapterhub_cart_styles() {
+    if ( is_cart() ) {
+        wp_enqueue_style(
+            'adapterhub-cart',
+            get_stylesheet_directory_uri() . '/cart-style.css',
+            array(),
+            wp_get_theme()->get( 'Version' )
+        );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'adapterhub_cart_styles' );
+
+function adapterhub_my_account_styles() {
+    if ( is_page(293) ) {
+        wp_enqueue_style(
+            'adapterhub-my-account',
+            get_stylesheet_directory_uri() . '/my-account-style.css',
+            array(),
+            wp_get_theme()->get('Version')
+        );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'adapterhub_my_account_styles' );

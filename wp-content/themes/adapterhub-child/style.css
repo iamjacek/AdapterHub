@@ -1,12 +1,3 @@
-/*
-Theme Name: AdapterHub Child
-Theme URI: https://adapterhub.local
-Description: Custom child theme for AdapterHub.
-Author: AdapterHub
-Template: hello-elementor
-Version: 1.0.0
-Text Domain: adapterhub-child
-*/
 * {
   box-sizing: border-box;
   margin: 0;
@@ -30,9 +21,6 @@ body {
     max-width: 480px;
   }
 }
-/* =========================================================
-   ADAPTERHUB — CAR BRANDS
-   ========================================================= */
 
 /* Main grid */
 .adapterhub-car-brands {
@@ -41,10 +29,6 @@ body {
   gap: 20px;
   width: 100%;
 }
-
-/* =========================================================
-   BRAND CARD
-   ========================================================= */
 
 .adapterhub-car-brand-item {
   display: flex;
@@ -74,10 +58,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* =========================================================
-   LOGO
-   ========================================================= */
-
 .adapterhub-car-brand-logo {
   display: flex;
   align-items: center;
@@ -99,10 +79,6 @@ body {
   object-fit: contain;
 }
 
-/* =========================================================
-   BRAND NAME
-   ========================================================= */
-
 .adapterhub-car-brand-name {
   font-family: Inter, sans-serif;
   font-size: 14px;
@@ -112,10 +88,6 @@ body {
   color: #111111;
   text-align: center;
 }
-
-/* =========================================================
-   MORE BRANDS
-   ========================================================= */
 
 .adapterhub-more-brands .adapterhub-car-brand-name {
   transform: translateY(13px);
@@ -140,26 +112,15 @@ body {
   color: #111111;
 }
 
-/* =========================================================
-   DESKTOP — 1501px+
-   8 BRANDS + MORE BRANDS
-   ========================================================= */
-
 .adapterhub-car-brands {
   display: grid;
   grid-template-columns: repeat(9, minmax(0, 1fr));
   gap: 20px;
 }
 
-/* Show only first 8 brands */
 .adapterhub-car-brand:nth-child(n + 9):not(.adapterhub-more-brands) {
   display: none;
 }
-
-/* =========================================================
-   1025px–1500px
-   5 BRANDS + MORE BRANDS
-   ========================================================= */
 
 @media screen and (max-width: 1500px) {
   .adapterhub-car-brands {
@@ -171,22 +132,12 @@ body {
   }
 }
 
-/* =========================================================
-   TABLET — 768px–1024px
-   5 BRANDS + MORE BRANDS
-   ========================================================= */
-
 @media screen and (max-width: 1024px) {
   .adapterhub-car-brands {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
   }
 }
-
-/* =========================================================
-   MOBILE — 0–767px
-   3 BRANDS + MORE BRANDS
-   ========================================================= */
 
 @media screen and (max-width: 767px) {
   .adapterhub-car-brands {
@@ -224,20 +175,12 @@ body {
   }
 }
 
-/* =========================================================
-   ADAPTERHUB — FEATURED PRODUCTS
-   ========================================================= */
-
 .adapterhub-featured-products {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 16px;
   width: 100%;
 }
-
-/* =========================================================
-   PRODUCT CARD
-   ========================================================= */
 
 .adapterhub-product-card {
   display: flex;
@@ -258,10 +201,6 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   transform: translateY(-2px);
 }
-
-/* =========================================================
-   PRODUCT IMAGE
-   ========================================================= */
 
 .adapterhub-product-image {
   display: flex;
@@ -285,10 +224,6 @@ body {
   object-fit: contain;
 }
 
-/* =========================================================
-   PRODUCT NAME
-   ========================================================= */
-
 .adapterhub-product-name {
   display: block;
   margin: 0;
@@ -300,10 +235,6 @@ body {
   color: #111111 !important;
   text-decoration: none;
 }
-
-/* =========================================================
-   PRODUCT PRICE
-   ========================================================= */
 
 .adapterhub-product-price {
   display: block;
@@ -320,9 +251,6 @@ body {
 .adapterhub-product-price .woocommerce-Price-currencySymbol {
   color: #111111 !important;
 }
-/* =========================================================
-   FEATURED PRODUCTS — RESPONSIVE
-   ========================================================= */
 
 @media (min-width: 1501px) {
   .adapterhub-featured-products {
@@ -348,10 +276,6 @@ body {
   }
 }
 
-/* =========================================================
-   FEATURED PRODUCTS — NUMBER OF PRODUCTS
-   ========================================================= */
-
 @media (min-width: 1501px) {
   .adapterhub-product-card:nth-child(n + 6) {
     display: none;
@@ -363,23 +287,17 @@ body {
   }
 }
 
-/* TABLET — 768px–1024px */
 @media (min-width: 768px) and (max-width: 1024px) {
   .adapterhub-product-card:nth-child(n + 4) {
     display: none;
   }
 }
 
-/* MOBILE — 0–767px */
 @media (max-width: 767px) {
   .adapterhub-product-card:nth-child(n + 5) {
     display: none;
   }
 }
-
-/* =========================================================
-   FEATURED PRODUCTS — IMAGE RESPONSIVE
-   ========================================================= */
 
 /* BIG DESKTOP — 1501px+ */
 @media (min-width: 1501px) {
@@ -388,21 +306,18 @@ body {
   }
 }
 
-/* DESKTOP — 1025px–1500px */
 @media (min-width: 1025px) and (max-width: 1500px) {
   .adapterhub-product-image {
     height: 190px;
   }
 }
 
-/* TABLET — 768px–1024px */
 @media (min-width: 768px) and (max-width: 1024px) {
   .adapterhub-product-image {
     height: 180px;
   }
 }
 
-/* MOBILE — 0–767px */
 @media (max-width: 767px) {
   .adapterhub-product-image {
     height: 150px;
@@ -410,17 +325,9 @@ body {
   }
 }
 
-/* =========================================================
-   FEATURED PRODUCTS — EQUAL CARD HEIGHT
-   ========================================================= */
-
 .adapterhub-product-name {
   min-height: 52px;
 }
-
-/* =========================================================
-   ADAPTERHUB — NEWSLETTER
-   ========================================================= */
 
 .adapterhub-newsletter-form {
   display: flex;
@@ -484,4 +391,69 @@ body {
 
 .adapterhub-subscription-wrapper {
   overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .elementor-widget-hfe-cart .hfe-subtotal {
+    display: none;
+  }
+}
+
+.about-hero-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-hero-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.85) 8%,
+    rgba(255, 255, 255, 0.35) 25%,
+    rgba(255, 255, 255, 0) 45%
+  );
+}
+
+/* AdapterHub — mobile navigation */
+@media (max-width: 767px) {
+  .adapterhub-mobile-menu .hfe-nav-menu__layout-horizontal.menu-is-active {
+    background: #172033 !important;
+    border-radius: 12px !important;
+    padding: 10px !important;
+  }
+
+  .adapterhub-mobile-menu .hfe-nav-menu > li > a.hfe-menu-item {
+    display: block;
+    background: transparent !important;
+    color: #e8edf5 !important;
+    padding: 12px 14px !important;
+  }
+
+  .adapterhub-mobile-menu .hfe-nav-menu > li:last-child > a.hfe-menu-item {
+    border-bottom: 0;
+    border-bottom-width: 0 !important;
+  }
+
+  .adapterhub-mobile-menu
+    .hfe-nav-menu
+    > li.current-menu-item
+    > a.hfe-menu-item,
+  .adapterhub-mobile-menu
+    .hfe-nav-menu
+    > li.current_page_item
+    > a.hfe-menu-item {
+    color: #7fa6ff !important;
+  }
+
+  .hfe-pointer__underline.hfe-animation__fade
+    .menu-item.parent.current-menu-item
+    a.hfe-menu-item:not(:hover):not(:focus):not(.current-menu-item):not(
+      .highlighted
+    ):after {
+    opacity: 0 !important;
+  }
 }
